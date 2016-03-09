@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 2.22.2 2016-02-16 13:32:17"/>
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:hint="This is simplified WADL with user and core resources only. To get full WADL with extended resources use the query parameter detail. Link: http://localhost:9998/application.wadl?detail=true"/>
+    <grammars/>
+    <resources base="http://localhost:9998/">
+        <resource path="transferFunds">
+            <resource path="viewAllAccounts">
+                <method id="viewAllAccounts" name="GET">
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="transfer">
+                <method id="transferFunds" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="amount" style="query" type="xs:double"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="from" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="to" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="viewAccount">
+                <method id="viewAccount" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="accountId" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>
